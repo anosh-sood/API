@@ -1,0 +1,22 @@
+<div class="table-container">
+  <h2>Registered Users</h2>
+
+  <table *ngIf="users.length > 0; else noUsers">
+    <thead>
+      <tr>
+        <th>Email ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.emailid }}</td>
+        <td>{{ user.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noUsers>
+    <p>No users found.</p>
+  </ng-template>
+</div>
